@@ -1,6 +1,12 @@
 body {
+    background-color: lightgray;
+    
+    align-self: center;
+}
+
+#header {
     width: 80vw;
+    height: 10vh;
     background-color: cadetblue;
-    height: 1000vh;
     align-self: center;
 }
