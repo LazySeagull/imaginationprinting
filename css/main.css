@@ -1,7 +1,11 @@
 body {
     background-color: lightgray;
-    
-    align-self: center;
+}
+
+html, body
+{
+    margin: 0;
+    padding: 0;
 }
 
 .content {
