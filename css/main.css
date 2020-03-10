@@ -6,6 +6,8 @@ body {
 
 .content {
     text-align: center;
+    position: static;
+    top: 0;
 }
 
 #header {
@@ -13,6 +15,4 @@ body {
     height: 10%;
     background-color: cadetblue;
     display: inline-block;
-    position: static;
-    top: 0;
 }
