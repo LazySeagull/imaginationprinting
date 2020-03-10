@@ -4,9 +4,13 @@ body {
     align-self: center;
 }
 
+.content {
+    text-align: center;
+}
+
 #header {
     width: 80%;
     height: 10%;
     background-color: cadetblue;
-    align-self: center;
+    display: inline-block;
 }
