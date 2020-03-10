@@ -5,8 +5,8 @@ body {
 }
 
 #header {
-    width: 80vw;
-    height: 10vh;
+    width: 80%;
+    height: 10%;
     background-color: cadetblue;
     align-self: center;
 }
