@@ -13,4 +13,6 @@ body {
     height: 10%;
     background-color: cadetblue;
     display: inline-block;
+    position: static;
+    top: 0;
 }
