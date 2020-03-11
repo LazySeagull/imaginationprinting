@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/contactform.css">
 </head>
 <body>
 <div class="content">
@@ -74,7 +75,29 @@
     <div class="section">
       <p class="section_title" id="contact"><a class="navbarlink" id="link-contact"href="#contact">CONTACT</a></p>
       <div class="innersection">
-        
+        <div id="contact_form">
+          <div class="container">
+            <form action="js/send_form_email.php">
+              <label for="formName">Full Name</label>
+              <input type="text" id="formName" name="Full Name" placeholder="Full Name">
+          
+              <label for="formEmail">Email Address</label>
+              <input type="text" id="formEmail" name="Email Address" placeholder="Email Address">
+          
+              <label for="service">Service Type</label>
+              <select id="formService" name="Service">
+                <option value="3DPrint">3D Print</option>
+                <option value="CAD/CAM">3D Modelling - CAD/CAM</option>
+                <option value="OTHER">Both/Other</option>
+              </select>
+          
+              <label for="message">Message</label>
+              <textarea id="formMessage" name="Message" placeholder="Message" style="height:200px"></textarea>
+          
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/nav.js"></script>
