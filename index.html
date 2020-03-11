@@ -102,6 +102,7 @@
 
           <script>
             function sendEmail(){
+                console.log("BUSINESS - Name: "+ document.getElementById("formName").value + ", Email: " + document.getElementById("formEmail").value + ", Service: " + document.getElementById("formService").value)
                 Email.send({
                   SecureToken: "a9c33a2c-03f6-473c-a2c6-714523b0ec4d",
                   To : 'contact@imaginationprinting.net',
