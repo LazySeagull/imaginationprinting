@@ -2,18 +2,72 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <title>Imagination Printing</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/gallery.css">
 </head>
-<body>
+<style>
+  .mySlides {display:none;}
+  </style>
+<body background="media/background.jpg" >
 <div class="content">
-    <div id="header">
-        <p>header bar</p>
-    
+    <div class="header" id="headerbar" >
+      <a href="#default" class="logo">IMAGINATION PRINTING</a>
+      <div class="header-right">
+        <a id="link-about" class="active"  href="#about">About</a>
+        <a id="link-gallery" href="#gallery">Gallery</a>
+        <a id="link-services"href="#services">Services</a>
+        <a id="link-contact"href="#contact">Contact</a>
       </div>
-
+      <div class="seperator"></div>
+    </div>
+    <div class="header">
+      <a href="#default" class="logo">IMAGINATION PRINTING</a>
+      <div class="header-right">
+        <a id="link-about" class="active"  href="#about">About</a>
+        <a id="link-gallery" href="#gallery">Gallery</a>
+        <a id="link-services"href="#services">Services</a>
+        <a id="link-contact"href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="seperator"></div>
+    <div class="section">
+      <div class="innersection" id="video-div">
+        <video autoplay muted loop id="top-video">
+          <source src="media/timelapse1-web.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div id="tagline"><p>QUALITY SERVICE</p></div>
+      </div>
+    </div>
+    <div class="seperator"></div>
     <div class="section" id="about">
 
+    </div>
+    <div class="seperator"></div>
+    <div class="section" id="gallery">
+      <div class="innersection">
+        <div class="w3-content w3-display-container">
+          <img class="mySlides" src="media/gallery/img1.png">
+          <img class="mySlides" src="media/gallery/img2.png">
+          <img class="mySlides" src="media/gallery/img3.jpg">
+          <img class="mySlides" src="media/gallery/img4.jpg">
+  
+          <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </div>
+        <script src="js/gallery.js"></script>
+      </div>
+    </div>
+    <div class="seperator"></div>
+    <div class="section" id="services">
+
+    </div>
+    <div class="seperator"></div>
+    <div class="section" id="contact">
 
     </div>
 </div>

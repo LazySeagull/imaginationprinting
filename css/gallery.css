@@ -1,0 +1,8 @@
+#gallery button 
+{
+    z-index: 100;
+}
+#gallery img
+{
+    width: 100%;
+}
