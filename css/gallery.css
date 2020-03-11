@@ -2,12 +2,10 @@
 .column {
     float: left;
     width: 25%;
-    padding: 10px;
   }
 .row
 {
     height: 10vw;
-    padding-bottom: 1vw;
     text-align: center;
 }
   

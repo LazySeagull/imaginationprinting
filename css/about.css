@@ -1,38 +1,39 @@
-#printing
-{
-    width: 49%;
-    float: left;
-    text-align: left;
-    text-align: center;
-    padding-bottom: 1vw;
-}
-#designing
+#personal
 {
     width: 49%;
     float: right;
     text-align: center;
+    height: fit-content;
     padding-bottom: 1vw;
     height: 100%;
+}
+#business
+{
+    width: 49%;
+    float: left;
+    text-align: center;
+    height: fit-content;
+    padding-bottom: 1vw;
 
 }
-#designing .container {
+#business .container {
     padding-left: 4vw;
     padding-right: 4vw;
 }
-#printing .container 
+#personal .container 
 {
     padding-left: 4vw;
     padding-right: 4vw;
 }
 
 @media screen and (max-width: 1000px) {
-    #printing {
+    #personal {
       float: none;
       width: 100%;
       display: block;
       height: 30vh;
     }
-    #designing {
+    #business {
       float: none;
       width: 100%;
       margin-top: 1vh;

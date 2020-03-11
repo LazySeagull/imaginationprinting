@@ -60,9 +60,9 @@ input[type=submit]:hover
 .container 
 {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #eeeeee;
     padding: 20px;
-    min-height: fit-content;
+    height: 30vw;
     height: 100%;
     padding-left: 2vw;
     padding-right: 2vw;
