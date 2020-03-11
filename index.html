@@ -76,8 +76,10 @@
       <p class="section_title" id="contact"><a class="navbarlink" id="link-contact"href="#contact">CONTACT</a></p>
       <div class="innersection">
         <div id="contact_form">
+          <script src="https://smtpjs.com/v3/smtp.js"> </script>
+
           <div class="container">
-            <form action="js/send_form_email.php">
+            <form>
               <label for="formName">Full Name</label>
               <input type="text" id="formName" name="full_name" placeholder="Full Name">
           
@@ -85,23 +87,43 @@
               <input type="text" id="formEmail" name="email_address" placeholder="Email Address">
           
               <label for="service">Service Type</label>
-              <select id="formService" name="Service">
+              <select id="formService" name="service">
                 <option value="3DPrint">3D Print</option>
                 <option value="CAD/CAM">3D Modelling - CAD/CAM</option>
                 <option value="OTHER">Both/Other</option>
               </select>
           
               <label for="message">Message</label>
-              <textarea id="formMessage" name="message" placeholder="Message" style="height:200px"></textarea>
+              <textarea id="formMessage" name="message" placeholder="message" style="height:200px"></textarea>
           
-              <input type="submit" value="Submit">
+              <input type="submit" value="Submit" onclick="sendEmail()">
             </form>
           </div>
+
+          <script>
+            function sendEmail(){
+                Email.send({
+                  Host : "smtp.gmail.com",
+                  Username : "imaginationprinting0@gmail.com",
+                  Password : "Plastic10",
+                  To : 'contact@imaginationprinting.net',
+                  From : "imaginationprinting0@gmail.com",
+                  Subject : "BUSINESS - Name: "+ document.getElementById("formName").value + ", Email: " + document.getElementById("formEmail").value + ", Service: " + document.getElementById("formService").value,
+                  Body : document.getElementById("formMessage").value
+                }).then(
+                message => alert("Message sent. Expect a reply within 2-4 business days.")
+              );
+            }
+            
+          </script>
+
         </div>
       </div>
     </div>
     <script src="js/nav.js"></script>
 </div>
+
+
   
 </body>
 </html>
