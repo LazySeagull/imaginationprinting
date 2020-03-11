@@ -23,26 +23,31 @@ html, body
     width: 100%;
     display: inline-block;
     text-align: center;
-    background: silver;
+    background: snow;
+    
 }
 .innersection
 {
     height: fit-content;
-    width: 60vw;
-    background-color: gainsboro;
+    width: 90vw;
+    padding: 1vh 1vw 1vh 1vw;
     display: inline-block;
 }
-.seperator {
-    height: 5px;
+
+.section_title
+{
+    font-size: 4vw;
+    margin: 0;
+    font-weight: bolder;
+    text-decoration: underline;
     width: 100%;
-    padding: 0;
-    background-image: linear-gradient(to right, rgba(0,0,0,0), darkgray, darkgray, darkgray, darkgray, darkgray, darkgray, darkgray, rgba(0,0,0,0));
-    display: inline-block;
 }
+
 
 p, a
 {
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 #video-div {
     padding: 0px;
@@ -51,6 +56,7 @@ p, a
     overflow: visible;
     height: 60vh;
     background: none;
+    z-index: 999;
 }
 #top-video {
     width: 100%;

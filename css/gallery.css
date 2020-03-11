@@ -1,8 +1,10 @@
 #gallery button 
 {
     z-index: 100;
+    background-color: black;
 }
 #gallery img
 {
     width: 100%;
 }
+.mySlides {display:none;}
