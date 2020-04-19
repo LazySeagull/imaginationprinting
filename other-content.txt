@@ -1,0 +1,12 @@
+
+    <div class="container">
+      <div class="section" id="video-section">
+        <div class="innersection" id="video-div">
+          <video autoplay muted loop id="top-video">
+            <source src="media/timelapse1-web.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div id="tagline"><p>The only limit is your imagination...</p></div>
+        </div>
+      </div>
+    </div>
