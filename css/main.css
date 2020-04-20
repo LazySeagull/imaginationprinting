@@ -11,7 +11,7 @@ html, body
     text-align: center;
     position: static;
     top: 0;
-    height: 200vh;
+    height: 100vh;
     border:0;
     background-color: #f5f5f5;
 }
@@ -20,4 +20,22 @@ p, a, label, input
 {
     font-family: 'Sen', sans-serif;
     font-weight: 500;
+}
+
+.vertical-container {
+    display: flex;
+    text-align: center;
+    margin: auto; 
+    height: 100%
+}
+
+.page-content {
+    width: auto;
+    margin: 0 auto;
+    align-content: center;
+}
+
+#home-video {
+    width: auto;
+    height: auto;
 }
