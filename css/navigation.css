@@ -1,0 +1,25 @@
+.nav-button {
+    position: fixed;
+    background: #333333;
+    height: 100%;
+    width: 80px;
+    font-size: 80px;
+    color: #d5eaf6;
+    opacity: 40%;
+    z-index: 666;
+}
+.nav-button:hover {
+    opacity: 60%;
+}
+.nav-button:hover p {
+    color: #ffb97b;
+}
+.nav-button:active {
+    opacity: 80%;
+}
+.nav-button p {
+    margin: auto;
+}
+#nav-button-right {
+    right: 0;
+}

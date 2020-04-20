@@ -3,259 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Sen:700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <title>Imagination Printing</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/contactform.css">
-    <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/video.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/navigation.css">
+
+
+
+    <script>
+        function setCookie(cname, cvalue, exdays) {
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          var expires = "expires="+ d.toUTCString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+          console.log(document.cookie)
+        }
+        
+        function getCookie(cname) {
+          var name = cname + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+        function checkPage(cvalue) {
+          var c=getCookie('currentpage');
+          if (c == "") {
+            setCookie("currentpage", cvalue, 30);
+          }
+        }
+        
+        pages = ["home","about","gallery","services","contact"]
+        
+        function changePage(pagename) {
+            for(i = 0; i  < pages.length; i++) {
+                if(pagename == pages[i]) {
+                    document.getElementById(pages[i]).style.zIndex = 9;
+                    document.getElementById(pages[i]).style.opacity = 100;
+                    setCookie("currentpage",i,30);
+                    console.log(pages[i])
+                }
+                else {
+                    document.getElementById(pages[i]).style.zIndex = 0;
+                    document.getElementById(pages[i]).style.opacity = 0;
+                }
+            }
+        }
+        
+        function changeWindow(direction) {
+            var newpage = getCookie("currentpage")
+            if(direction == 'left') {
+                newpage -= 1
+                if(newpage < 0) {
+                  newpage = pages.length - 1
+                }
+            }
+            else if(direction == 'right') {
+                newpage += 1
+                if(newpage >= pages.length) {
+                  newpage = 0
+                }
+                else {
+        
+                }
+            }
+            console.log(newpage)
+            changePage(pages[newpage])
+        }
+        </script>
 </head>
-<body>
+<body onload="checkPage('home')">
 <div class="content">
     <div class="header" id="headerbar" >
-      <a href="#headerbardiv" class="logo">IMAGINATION PRINTING</a>
+      <a href="javascript:changePage('home')" class="logo">IMAGINATION PRINTING</a>
       <div class="header-right">
-        <a class="navbarlink" id="link-about" href="#about" >About</a>
-        <a class="navbarlink" id="link-gallery" href="#gallery"  >Gallery</a>
-        <a class="navbarlink" id="link-services"href="#services"  >Services</a>
-        <a class="navbarlink" id="link-contact"href="#contact"  >Contact</a>
-      </div>
-       
-    </div>
-    <div class="header" id="headerbardiv">
-      <a href="#default" class="logo"   >IMAGINATION PRINTING</a>
-      <div class="header-right">
-        <a class="navbarlink" id="link-about" href="#about"   >About</a>
-        <a class="navbarlink" id="link-gallery" href="#gallery"   >Gallery</a>
-        <a class="navbarlink" id="link-services"href="#services"   >Services</a>
-        <a class="navbarlink" id="link-contact"href="#contact"   >Contact</a>
+        <p>
+          <a class="navbarlink" id="link-about" href="javascript:changePage('about')">about</a> |
+          <a class="navbarlink" id="link-gallery" href="javascript:changePage('gallery')" >gallery</a> |
+          <a class="navbarlink" id="link-services" href="javascript:changePage('services')" >services</a> |
+          <a class="navbarlink" id="link-contact"href="javascript:changePage('contact')" >contact</a>
+        </p>
       </div>
     </div>
-    <div class="section" id="video-section">
-      <div class="innersection" id="video-div">
-        <video autoplay muted loop id="top-video">
-          <source src="media/timelapse1-web.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div id="tagline"><p>The only limit is your imagination...</p></div>
-      </div>
+    <div class="nav-button" id="nav-button-left" onclick="changeWindow('left')">
+      <div class="vertical-container"><p> ‹ </p></div>
+    </div>
+    <div class="nav-button" id="nav-button-right" onclick="changeWindow('right')">
+      <div class="vertical-container"><p> › </p></div>
     </div>
 
-    <!-- About Page -->
-
-    <div class="section">
-      <p class="section_title" id="about"><a class="navbarlink" id="link-about" href="#about">ABOUT</a></p>
-      <div class="innersection">
-        <div id="personal">
-          <div class="container">
-              <p class="subsection_title">About Me</p>
-              <br>
-              <p class="page_content">
-              Ben is a first year university student undertaking a full time double degree in both Mechatronic Engineering (Honours) and Computer Science. They has been playing with 3D printers for the past 4-5 years, and has been designing CAD/CAM models for even longer. <br><br> 
-              Ben has lead engineering clubs in high school, such as the international Rapidly Manufactured Rescue League team "Kings Legacy", who recently placed 3rd at Robocup, Sydney in 2019. Ben continues to provide their skills to the club, through the designing of new robots, to maintaining previous competitions robots.<br><br>
-              Recently, they have been taking part of the international FIRST robotics competition, in which teams of high school students compete against each other using robots designed for specific tasks, such as shooting balls or climbing a beam.<br><br> They have been competing as part of the inaugural UWA FIRST robotics team, who intended to compete in the 2020 regional competition, however they were cut short due to the COVID-19 Virus epidemic. They hope to continue on as a mentor in future years. 
-          </p>
-
-          </div>
-          
-        </div>
-        <div id="business">
-            <div class="container">
-            <p class="subsection_title">Who we are.</p>
-              <br>
-              <p class="page_content">
-                Imagination Printing is a startup focused on making high quality 3D Printing and Modelling as affordable and widespread as possible. Inspired by the recent surge in technologies around the concept of 3D printing, Imagination Printing comes forward as the idea of a young student who felt driven to pursue the potential of 3D design and printing.<br><br>
-                Now, we are armed with the latest industry technology to provide Australia with the highest quality prints, and years of expertise creating CAD/CAM models have made our team experts in what they do. <br><br>
-                Send us an email by using the form below, or directly mailing your question to <a href = "mailto: contact@imaginationprinting.net">contact@imaginationprinting.net</a>.
-              </p>
-
-          </div>
-          <script>
-
-            window.addEventListener('resize',changeservicescontainer)
-
-            function changeservicescontainer(){
-              document.getElementById("business").style.height = document.getElementById("personal").clientHeight + "px"
-            }
-            changeservicescontainer()
-          </script>
-          </div>
+    <div class="page-content">
+      <div id="home">
+          <video autoplay muted loop id="home-video">
+            <source src="media/timelapse1-web.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
       </div>
-    </div>
 
-    <!-- Gallery Page -->
+      <div id="about">
 
-    <div class="section" id="gallery">
-      
-      <p class="section_title"><a class="navbarlink" id="link-gallery" href="#gallery">GALLERY</a></p>
-      <div class="innersection">
-                    <!-- The grid: four columns -->
-            <div class="column">
-              <div class="row">
-                <img src="media/gallery/img1.jpg" alt="Nature" onclick="myFunction(this);">
-              </div>
-              <div class="row">
-                <img src="media/gallery/img2.jpg" alt="Snow" onclick="myFunction(this);">
-              </div>
-              <div class="row">
-                <img src="media/gallery/img3.jpg" alt="Mountains" onclick="myFunction(this);">
-              </div>
-              <div class="row">
-                <img src="media/gallery/img4.jpg" alt="Lights" onclick="myFunction(this);">
-              </div>
-            </div>
 
-            <!-- The expanding image container -->
-            <div id="container">
-              <!-- Close the image -->
-              <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-
-              <!-- Expanded image -->
-              <img id="expandedImg" style="width:100%">
-
-              <!-- Image text -->
-              <div id="imgtext"></div>
-            </div>
-            <script>
-              function myFunction(imgs) {
-                // Get the expanded image
-                var expandImg = document.getElementById("expandedImg");
-                // Get the image text
-                var imgText = document.getElementById("imgtext");
-                // Use the same src in the expanded image as the image being clicked on from the grid
-                expandImg.src = imgs.src;
-                // Use the value of the alt attribute of the clickable image as text inside the expanded image
-                imgText.innerHTML = imgs.alt;
-                // Show the container element (hidden with CSS)
-                expandImg.parentElement.style.display = "block";
-            }
-            </script>
       </div>
-    </div>
 
-    <!-- Services Page -->
-     
-    <div class="section">
-      <p class="section_title" id="services"><a class="navbarlink" id="link-services"href="#services">SERVICES</a></p>
-      <div class="innersection">
-        <div id="printing">
-          <div class="container">
-              <p class="subsection_title">3D Printing</p>
-              <br>
-              <p class="page_content">
-              We offer high quality 3D printing services using our industry standard 3D printers. We offer a range of materials, specialising in PLA, in which we provide a wide range of colours, including white, silver and black. 
-              <br><br>
-              We provide our customers with the abiity to adjust the desired quality of the print. Adjusting the quality of the print will change the total cost of the print job, allowing us at Imagination Printing to provide our customers with a extensive range of cost effective options.
-              <br><br>
-              Please contact us using our contact form (below) with any questions surrounding our 3D Printing service. 
-          </p>
+      <div id="gallery">
 
-          </div>
-          
-        </div>
-        <div id="designing">
-            <div class="container">
-            <p class="subsection_title">3D Modelling & Designing</p>
-              <br>
-              <p class="page_content">
-                Should you not be able to find the desired model you wish to print online, or you simply need something modelled with standary industry CAD/CAM tools, we offer the experience of several years of intensive use of programs such as AutoDesk Inventor, Fusion 360 and CATIA v5. These programs are used by companies such as Boeing Aerospace Company and Robotis Technologies.
-                <br><br>
-                First we will discuss what you need from the model, and all the features and requirements you wish to see from the model, and then our team of experts will assemble the model online. <br>We then go through a phase of where clients offer feedback, tweaking the model as they seem fit, with the assistance of our friendly staff. Once the model is completed we send you the model in a variety of formats available for 3D printing, showcasing and editing.<br><br>
-              </p>
 
-          </div>
-          <script>
-
-            window.addEventListener('resize',changeservicescontainer)
-
-            function changeservicescontainer(){
-              document.getElementById("printing").style.height = document.getElementById("designing").clientHeight + "px"
-            }
-            changeservicescontainer()
-          </script>
-          </div>
       </div>
-    </div>
-     
-    <!-- Contact Page-->
 
-    <div class="section">
-      <p class="section_title" id="contact"><a class="navbarlink" id="link-contact"href="#contact">CONTACT & GET A QUOTE</a></p>
-      <div class="innersection">
-        <div id="contact_details">
-          <div class="container">
-              <p class="subsection_title">Our details</p>
-              <br>
-              <p class="page_content">Due to privacy concerns, we are unable to provide a contact number to our clients. However, we may call you should you wish us to. In this case, please fill out the contact form, and include your phone number.<br> We will endevour to reply within 2-4 business days, unless otherwise specified. </p>
+      <div id="services">
 
-              <br><br><br>
-              <p class="subsection_title">Business Enquiries</p>
-              <br>
-              <p class="page_content">For all related business Enquiries, please use the contact form. If you wish to speak with us directly, please shoot us an email at <br><br><a href = "mailto: contact@imaginationprinting.net">contact@imaginationprinting.net</a>.<br><br> We should get back to you within 2-4 business days.</p>
-
-          </div>
-          
-        </div>
-        <div id="contact_form">
-          <script src="https://smtpjs.com/v3/smtp.js"> </script>
-
-          <div class="container">
-            <form>
-              <label for="formName">Full Name</label>
-              <input type="text" id="formName" name="full_name" placeholder="Full Name">
-          
-              <label for="formEmail">Email Address</label>
-              <input type="text" id="formEmail" name="email_address" placeholder="Email Address">
-          
-              <label for="service">Service Type</label>
-              <select id="formService" name="service">
-                <option value="3DPrint">3D Print</option>
-                <option value="CAD/CAM">3D Modelling - CAD/CAM</option>
-                <option value="OTHER">Both/Other</option>
-              </select>
-          
-              <label for="message">Message</label>
-              <textarea id="formMessage" name="message" placeholder="message" style="height:200px"></textarea>
-          
-              <input type="submit" value="Submit" onclick="sendEmail()">
-            </form>
-          </div>
-
-          <script>
-
-            window.addEventListener('resize',changecontactcontainer)
-
-            function changecontactcontainer(){
-              document.getElementById("contact_details").style.height = document.getElementById("contact_form").clientHeight + "px"
-              console.log(document.getElementById("contact_details").style.height)
-            }
-            changecontactcontainer()
-            function sendEmail(){
-                console.log("BUSINESS - Name: "+ document.getElementById("formName").value + ", Email: " + document.getElementById("formEmail").value + ", Service: " + document.getElementById("formService").value)
-                Email.send({
-                  SecureToken: "a9c33a2c-03f6-473c-a2c6-714523b0ec4d",
-                  To : 'contact@imaginationprinting.net',
-                  From : "imaginationprinting0@gmail.com",
-                  Subject : "BUSINESS - Name: "+ document.getElementById("formName").value + ", Email: " + document.getElementById("formEmail").value + ", Service: " + document.getElementById("formService").value,
-                  Body : document.getElementById("formMessage").value
-                }).then(
-                message => alert("Message sent. Expect a reply within 2-4 business days.")
-              );
-            }
-            
-          </script>
-
-        </div>
       </div>
+
+      <div id="contact">
+
+      </div>
+
     </div>
-    <script src="js/nav.js"></script>
 </div>
 
 
-  
+
+
+
 </body>
 </html>

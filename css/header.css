@@ -1,62 +1,54 @@
-/* Style the header with a grey background and some padding */
-.header  {
-  overflow: hidden;
-  background-color: #d4d4d4;
-  width: 100%;
-  display: inline-block;
-  opacity: 0;
-  z-index: 999;
-}
-#headerbar {
+.header {
   position: fixed;
-  z-index: 666;
-  opacity: 1;
-  background-image: linear-gradient(#d4d4d4, #f5f5f5);
+  align-self: center;
+  background-color: #9cc7df;
+  width: 100%;
+  height: 90px;
+  border-bottom: #333333 2px solid; 
+  z-index: 999
 }
-  /* Style the header links */
-  .header a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px;
-    margin: 6px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px;
+
+.logo {
+  float: left;
+  margin-left: 1vw;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  position: relative;
+  font-size: 56px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.header-right {
+  float: right;
+  margin-right: 1vw;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  position: relative;
+  font-size: 48px;
+  color: #333333;
+}
+
+.navbarlink {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #333333;
+}
+.navbarlink:hover {
+  color: #466482;
+}
+
+
+@media (max-width: 1200px) {
+  .menu-icon {
+    z-index: 999;
+    opacity: 100;
   }
-  
-  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-  .header a.logo {
-    font-size: 25px;
-    font-weight: bold;
-  }
-  
-  /* Change the background color on mouse-over */
-  .header a:hover {
-    background-color: darkgray;
-    color: black;
-  }
-  
-  /* Style the active/current link*/
-  .header a.active {
-    background-color: lightblue;
-    color: white;
-  }
-  
-  /* Float the link section to the right */
   .header-right {
-    float: right;
+    z-index: 0;
+    opacity: 0;
+    position: absolute;
   }
-  
-  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-  @media screen and (max-width: 500px) {
-    .header a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-    .header-right {
-      float: none;
-    }
-  }
+}

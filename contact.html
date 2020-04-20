@@ -1,0 +1,71 @@
+<!-- Contact Page-->
+
+<div class="section">
+    <p class="section_title" id="contact"><a class="navbarlink" id="link-contact"href="#contact">CONTACT & GET A QUOTE</a></p>
+    <div class="innersection">
+      <div id="contact_details">
+        <div class="container">
+            <p class="subsection_title">Our details</p>
+            <br>
+            <p class="page_content">Due to privacy concerns, we are unable to provide a contact number to our clients. However, we may call you should you wish us to. In this case, please fill out the contact form, and include your phone number.<br> We will endevour to reply within 2-4 business days, unless otherwise specified. </p>
+
+            <br><br><br>
+            <p class="subsection_title">Business Enquiries</p>
+            <br>
+            <p class="page_content">For all related business Enquiries, please use the contact form. If you wish to speak with us directly, please shoot us an email at <br><br><a href = "mailto: contact@imaginationprinting.net">contact@imaginationprinting.net</a>.<br><br> We should get back to you within 2-4 business days.</p>
+
+        </div>
+        
+      </div>
+      <div id="contact_form">
+        <script src="https://smtpjs.com/v3/smtp.js"> </script>
+
+        <div class="container">
+          <form>
+            <label for="formName">Full Name</label>
+            <input type="text" id="formName" name="full_name" placeholder="Full Name">
+        
+            <label for="formEmail">Email Address</label>
+            <input type="text" id="formEmail" name="email_address" placeholder="Email Address">
+        
+            <label for="service">Service Type</label>
+            <select id="formService" name="service">
+              <option value="3DPrint">3D Print</option>
+              <option value="CAD/CAM">3D Modelling - CAD/CAM</option>
+              <option value="OTHER">Both/Other</option>
+            </select>
+        
+            <label for="message">Message</label>
+            <textarea id="formMessage" name="message" placeholder="message" style="height:200px"></textarea>
+        
+            <input type="submit" value="Submit" onclick="sendEmail()">
+          </form>
+        </div>
+
+        <script>
+
+          window.addEventListener('resize',changecontactcontainer)
+
+          function changecontactcontainer(){
+            document.getElementById("contact_details").style.height = document.getElementById("contact_form").clientHeight + "px"
+            console.log(document.getElementById("contact_details").style.height)
+          }
+          changecontactcontainer()
+          function sendEmail(){
+              console.log("BUSINESS - Name: "+ document.getElementById("formName").value + ", Email: " + document.getElementById("formEmail").value + ", Service: " + document.getElementById("formService").value)
+              Email.send({
+                SecureToken: "a9c33a2c-03f6-473c-a2c6-714523b0ec4d",
+                To : 'contact@imaginationprinting.net',
+                From : "imaginationprinting0@gmail.com",
+                Subject : "BUSINESS - Name: "+ document.getElementById("formName").value + ", Email: " + document.getElementById("formEmail").value + ", Service: " + document.getElementById("formService").value,
+                Body : document.getElementById("formMessage").value
+              }).then(
+              message => alert("Message sent. Expect a reply within 2-4 business days.")
+            );
+          }
+          
+        </script>
+
+      </div>
+    </div>
+  </div>
